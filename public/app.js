@@ -38,7 +38,12 @@ Backbone.$ = $;
  * title: String
  * content: String
  */
-module.exports = Backbone.Model.extend();
+module.exports = Backbone.Model.extend({
+  defaults: {
+    "title": "",
+    "content": ""
+  }
+});
 
 },{"backbone":6,"jquery/dist/jquery":44}],4:[function(require,module,exports){
 var Backbone = require('backbone');
@@ -56,6 +61,8 @@ module.exports = Backbone.View.extend({
 
       this.$el.append(p.render());
     }.bind(this));
+
+    return this;
   }
 });
 
@@ -74,7 +81,9 @@ module.exports = Backbone.View.extend({
   template: Handlebars.compile(postTemplate.toString()),
 
   render: function() {
-    return this.$el.html(this.template(this.model));
+    this.$el.html(this.template(this.model));
+
+    return this;
   }
 });
 
