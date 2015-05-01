@@ -11,8 +11,6 @@ module.exports = Backbone.View.extend({
   template: Handlebars.compile(postTemplate.toString()),
 
   render: function() {
-    this.$el.html(this.template(this.model));
-
-    return this;
+    return this.$el.html(this.template(this.model));
   }
 });

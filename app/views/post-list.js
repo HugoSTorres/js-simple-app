@@ -13,7 +13,5 @@ module.exports = Backbone.View.extend({
 
       this.$el.append(p.render());
     }.bind(this));
-
-    return this;
   }
 });
